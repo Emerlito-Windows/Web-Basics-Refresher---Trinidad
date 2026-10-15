@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Enrollment System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <!-- Optional: add the UC logo file to your repo and uncomment -->
+      <!-- <img src="uc-logo.png" alt="University of the Cordilleras logo" class="logo"> -->
+      <div>
+        <p class="univ">University of the Cordilleras</p>
+        <h1>Student Enrollment System</h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Enrollment Form</h2>
+      <div id="successMessage" class="success" hidden></div>
+
+      <form id="enrollForm" novalidate>
+        <div class="field">
+          <label for="studentId">Student ID *</label>
+          <input type="text" id="studentId" name="studentId">
+          <span class="error" id="studentIdError"></span>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="prefix">Prefix</label>
+            <input type="text" id="prefix" name="prefix">
+            <span class="error" id="prefixError"></span>
+          </div>
+          <div class="field">
+            <label for="suffix">Suffix</label>
+            <input type="text" id="suffix" name="suffix">
+            <span class="error" id="suffixError"></span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="firstName">First Name *</label>
+          <input type="text" id="firstName" name="firstName">
+          <span class="error" id="firstNameError"></span>
+        </div>
+
+        <div class="field">
+          <label for="middleName">Middle Name</label>
+          <input type="text" id="middleName" name="middleName">
+          <span class="error" id="middleNameError"></span>
+        </div>
+
+        <div class="field">
+          <label for="lastName">Last Name *</label>
+          <input type="text" id="lastName" name="lastName">
+          <span class="error" id="lastNameError"></span>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email">
+          <span class="error" id="emailError"></span>
+        </div>
+
+        <div class="field">
+          <label for="course">Course *</label>
+          <select id="course" name="course">
+            <option value="">Select course</option>
+            <option value="BSIT">BSIT</option>
+            <option value="BSCS">BSCS</option>
+            <option value="BMMA">BMMA</option>
+            <option value="BSAIS">BSAIS</option>
+          </select>
+          <span class="error" id="courseError"></span>
+        </div>
+
+        <div class="field" id="majorField" hidden>
+          <label for="major">Major *</label>
+          <select id="major" name="major">
+            <option value="">Select major</option>
+            <option value="Net Sec">Net Sec</option>
+            <option value="Web Tech">Web Tech</option>
+            <option value="ERP">ERP</option>
+          </select>
+          <span class="error" id="majorError"></span>
+        </div>
+
+        <div class="field">
+          <label for="year">Year Level *</label>
+          <select id="year" name="year">
+            <option value="">Select year level</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+          </select>
+          <span class="error" id="yearError"></span>
+        </div>
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Submitted Students</h2>
+      <div class="table-wrap">
+        <table id="dataTable">
+          <thead>
+            <tr>
+              <th>Student ID</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Course</th>
+              <th>Major</th>
+              <th>Year</th>
+            </tr>
+          </thead>
+          <tbody id="dataBody">
+            <tr id="emptyRow"><td colspan="6">No submissions yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; University of the Cordilleras, Baguio City</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
